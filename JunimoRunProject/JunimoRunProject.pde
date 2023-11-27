@@ -1,33 +1,34 @@
 //Global Variables
 int appWidth, appHeight, smallerDimension;
+Boolean OS_On = false;
+PFont ;
+float ssSpaceBarX, ssSpaceBarY, ssSpaceBarWidth, ssSpaceBarHeight;
 //
 void setup() {
 size(600, 600);
 appWidth = width; //displayWidth
 appHeight = height; //displayHeight
-//
-//Display Algorithm
-smallerDimension = ( appWidth >= appHeight ) ? appHeight : appWidth; //Ternary Operator
- //Purpose: CANVAS fits in monitor & dimension size is known
-  //Output #1: Console confirms CANVAS will fit in the monitor
-  if( width < displayWidth && height < displayHeight ) {
-    println("CANVAS fits in DISPLAY GEOMETRY");
-  }
-  //Output #2: Console confirms display orientation (landscape-square or portrait)
-  //Output #3: Console confirms dimension sizes (smaller and larger)
-  //Output #4: if error with any of above, program will exit or be broken
-  if( width >= height ) { //landscape-square
-  println("DISPLAY is landscape or Square");
-} else { //portrait
- println("DISPLAY is portrait");
- println("Junimo");
- exit();
+displayAlgorithm();
+textSetup(); //See Text
+ //
+ //Population, eventually move this into a new TAB(SUBPROGRAM)
+ float centerX=appWidth*1/2, centerY=appHeight*1/2;
+  ssSpaceBarWidth = appWidth*1/2;
+  ssSpaceBarHeight = appHeight*1/10;
+  ssSpaceBarX = centerX - ssSpaceBarWidth*1/2;
+  ssSpaceBarY = centerY - ssSpaceBarHeight*1/2;
+  //
+  //DIVs
+  //Layout our text space and typographical features
+  //rect( ssSpaceBarX, ssSpaceBarY, ssSpaceBarWidth, ssSpaceBarHeight );
 
-  //End Display Orientation
-
-} //end setup
+} //End setup
 //
-void draw() {} //end draw
+void draw() {
+if( OS_On = true ) splashScreen();
+if( OS_On = true && programStart = true ) homeScreen();
+
+} //end draw
 //
 void mousePressed() {} //end keyPressed
 //
